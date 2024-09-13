@@ -1,0 +1,310 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 1.25rem 2.5rem;
+  overflow-x: hidden;
+}
+
+.wrapper header,
+.wrapper footer {
+  flex-shrink: 0;
+}
+
+.wrapper main {
+  flex-grow: 1;
+}
+
+.visually-hidden {
+  width: 0.05rem;
+  height: 0.05rem;
+  margin: -0.05rem;
+  padding: 0;
+  border: 0;
+  clip-path: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.slider {
+  width: 100%;
+}
+
+.slider__title {
+  text-align: center;
+}
+
+.slider__content {
+  display: grid;
+  grid-template-columns: 28.125rem 1fr;
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 1.5%;
+  box-shadow: 0 0 0.625rem hsla(0, 0%, 0%, 0.1);
+}
+
+.slider__list {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  transition: transform 0.5s ease;
+}
+
+.slider__item {
+  min-width: 100%;
+}
+
+.slider__image {
+  display: flex;
+  height: 29.25rem;
+  padding: 1.25rem;
+  background-color: hsl(135, 9%, 55%);
+
+  img {
+    margin: auto;
+    object-fit: contain;
+  }
+}
+
+/* Подписи */
+
+.caption {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  max-width: 28.125rem;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  transition: all 0.5s ease;
+}
+
+.caption__item {
+  min-width: 100%;
+}
+
+.caption__text {
+  margin: 2.5rem 0;
+  padding-left: 1.25rem;
+  font-size: 1.2em;
+  opacity: 0;
+}
+
+/* Стили для смены изображений и подписей */
+#slide1:checked ~ .slider__list,
+#slide1:checked ~ .caption {
+  transform: translateX(0);
+}
+
+#slide2:checked ~ .slider__list,
+#slide2:checked ~ .caption {
+  transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slider__list,
+#slide3:checked ~ .caption {
+  transform: translateX(-200%);
+}
+
+#slide4:checked ~ .slider__list,
+#slide4:checked ~ .caption {
+  transform: translateX(-300%);
+}
+
+#slide5:checked ~ .slider__list,
+#slide5:checked ~ .caption {
+  transform: translateX(-400%);
+}
+
+#slide6:checked ~ .slider__list,
+#slide6:checked ~ .caption {
+  transform: translateX(-500%);
+}
+
+#slide7:checked ~ .slider__list,
+#slide7:checked ~ .caption {
+  transform: translateX(-600%);
+}
+
+#slide8:checked ~ .slider__list,
+#slide8:checked ~ .caption {
+  transform: translateX(-700%);
+}
+
+#slide9:checked ~ .slider__list,
+#slide9:checked ~ .caption {
+  transform: translateX(-800%);
+}
+
+#slide10:checked ~ .slider__list,
+#slide10:checked ~ .caption {
+  transform: translateX(-900%);
+}
+
+#slide11:checked ~ .slider__list,
+#slide11:checked ~ .caption {
+  transform: translateX(-1000%);
+}
+
+#slide12:checked ~ .slider__list,
+#slide12:checked ~ .caption {
+  transform: translateX(-1100%);
+}
+
+#slide13:checked ~ .slider__list,
+#slide13:checked ~ .caption {
+  transform: translateX(-1200%);
+}
+
+#slide14:checked ~ .slider__list,
+#slide14:checked ~ .caption {
+  transform: translateX(-1300%);
+}
+
+/* Подписи к активным слайдам */
+
+#slide1:checked ~ ul .caption__item--1 .caption__text,
+#slide2:checked ~ ul .caption__item--2 .caption__text,
+#slide3:checked ~ ul .caption__item--3 .caption__text,
+#slide4:checked ~ ul .caption__item--4 .caption__text,
+#slide5:checked ~ ul .caption__item--5 .caption__text,
+#slide6:checked ~ ul .caption__item--6 .caption__text,
+#slide7:checked ~ ul .caption__item--7 .caption__text,
+#slide8:checked ~ ul .caption__item--8 .caption__text,
+#slide9:checked ~ ul .caption__item--9 .caption__text,
+#slide10:checked ~ ul .caption__item--10 .caption__text,
+#slide11:checked ~ ul .caption__item--11 .caption__text,
+#slide12:checked ~ ul .caption__item--12 .caption__text,
+#slide13:checked ~ ul .caption__item--13 .caption__text,
+#slide14:checked ~ ul .caption__item--14 .caption__text {
+  opacity: 1;
+}
+
+/* Пагинация */
+
+.pagination {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  align-items: end;
+  max-width: 20rem;
+  margin-top: auto;
+  margin-left: auto;
+  z-index: 1;
+}
+
+.pagination label {
+  display: flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0 0.313rem;
+  background-color: hsl(144, 8%, 49%);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.pagination__btn {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: auto;
+  background-color: hsl(3, 59%, 86%);
+  border: 0.188rem solid hsl(3, 59%, 86%);
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+@media (hover:hover) {
+  .pagination__btn:hover {
+    background-color: hsl(3, 89%, 96%);
+    border-color: hsl(3, 89%, 96%);
+  }
+  
+  .pagination__btn:active {
+    background-color: hsl(3, 31%, 67%);
+    border-color: hsl(3, 31%, 67%);
+  }
+}
+
+/* Активная кнопка пагинации */
+
+#slide1:checked ~ .pagination .pagination__btn--1,
+#slide2:checked ~ .pagination .pagination__btn--2,
+#slide3:checked ~ .pagination .pagination__btn--3,
+#slide4:checked ~ .pagination .pagination__btn--4,
+#slide5:checked ~ .pagination .pagination__btn--5,
+#slide6:checked ~ .pagination .pagination__btn--6,
+#slide7:checked ~ .pagination .pagination__btn--7,
+#slide8:checked ~ .pagination .pagination__btn--8,
+#slide9:checked ~ .pagination .pagination__btn--9,
+#slide10:checked ~ .pagination .pagination__btn--10,
+#slide11:checked ~ .pagination .pagination__btn--11,
+#slide12:checked ~ .pagination .pagination__btn--12,
+#slide13:checked ~ .pagination .pagination__btn--13,
+#slide14:checked ~ .pagination .pagination__btn--14 {
+  background-color: transparent;
+}
+
+/* Footer */
+.main-footer {
+  margin: 0 auto;
+  padding-top: 1.25rem;
+  text-align: center;
+}
+
+/* Стили мобильного меню */
+
+@media (max-width: 1023px) {
+  .wrapper {
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+  }
+
+  .slider__content {
+    grid-template-columns: 1fr;
+  }
+
+  .caption {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    min-width: 100%;
+  }
+
+  .caption__text {
+    margin: 1.25rem 0;
+  }
+
+  .pagination {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .pagination label {
+    width: 2.65rem;
+    height: 2.65rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider__item {
+    display: flex;
+    height: auto;
+  }
+
+  .slider__image {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .slider__image img {
+    width: 100%;
+  }
+}
