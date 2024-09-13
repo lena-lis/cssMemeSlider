@@ -34,7 +34,7 @@
 
 .slider__content {
   display: grid;
-  grid-template-columns: 1fr 22rem;
+  grid-template-columns: 28.125rem 1fr;
   width: 80vw;
   max-width: 50rem;
   margin: 0 0.625rem;
@@ -45,7 +45,7 @@
 
 .slider__list {
   grid-column: 1 / -1;
-  grid-row: 1 / -1;
+  grid-row: 1 / 2;
   display: flex;
   margin: 0;
   padding: 0;
@@ -69,88 +69,117 @@
   }
 }
 
+/* Подписи */
+
 .caption {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  max-width: 28.125rem;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  transition: all 0.5s ease;
+}
+
+.caption__item {
+  min-width: 100%;
+}
+
+.caption__text {
   margin: 2.5rem 0;
   padding-left: 1.25rem;
   font-size: 1.2em;
-  opacity: 0; 
-  transition: opacity 0.5s ease;
+  opacity: 0;
 }
 
-/* Стили для смены слайдов */
-#slide1:checked ~ .slider__list {
+/* Стили для смены изображений и подписей */
+#slide1:checked ~ .slider__list,
+#slide1:checked ~ .caption {
   transform: translateX(0);
 }
 
-#slide2:checked ~ .slider__list {
+#slide2:checked ~ .slider__list,
+#slide2:checked ~ .caption {
   transform: translateX(-100%);
 }
 
-#slide3:checked ~ .slider__list {
+#slide3:checked ~ .slider__list,
+#slide3:checked ~ .caption {
   transform: translateX(-200%);
 }
 
-#slide4:checked ~ .slider__list {
+#slide4:checked ~ .slider__list,
+#slide4:checked ~ .caption {
   transform: translateX(-300%);
 }
 
-#slide5:checked ~ .slider__list {
+#slide5:checked ~ .slider__list,
+#slide5:checked ~ .caption {
   transform: translateX(-400%);
 }
 
-#slide6:checked ~ .slider__list {
+#slide6:checked ~ .slider__list,
+#slide6:checked ~ .caption {
   transform: translateX(-500%);
 }
 
-#slide7:checked ~ .slider__list {
+#slide7:checked ~ .slider__list,
+#slide7:checked ~ .caption {
   transform: translateX(-600%);
 }
 
-#slide8:checked ~ .slider__list {
+#slide8:checked ~ .slider__list,
+#slide8:checked ~ .caption {
   transform: translateX(-700%);
 }
 
-#slide9:checked ~ .slider__list {
+#slide9:checked ~ .slider__list,
+#slide9:checked ~ .caption {
   transform: translateX(-800%);
 }
 
-#slide10:checked ~ .slider__list {
+#slide10:checked ~ .slider__list,
+#slide10:checked ~ .caption {
   transform: translateX(-900%);
 }
 
-#slide11:checked ~ .slider__list {
+#slide11:checked ~ .slider__list,
+#slide11:checked ~ .caption {
   transform: translateX(-1000%);
 }
 
-#slide12:checked ~ .slider__list {
+#slide12:checked ~ .slider__list,
+#slide12:checked ~ .caption {
   transform: translateX(-1100%);
 }
 
-#slide13:checked ~ .slider__list {
+#slide13:checked ~ .slider__list,
+#slide13:checked ~ .caption {
   transform: translateX(-1200%);
 }
 
-#slide14:checked ~ .slider__list {
+#slide14:checked ~ .slider__list,
+#slide14:checked ~ .caption {
   transform: translateX(-1300%);
 }
 
-
 /* Подписи к активным слайдам */
 
-#slide1:checked ~ .slider__list .caption,
-#slide2:checked ~ .slider__list .caption,
-#slide3:checked ~ .slider__list .caption,
-#slide4:checked ~ .slider__list .caption,
-#slide5:checked ~ .slider__list .caption,
-#slide6:checked ~ .slider__list .caption,
-#slide7:checked ~ .slider__list .caption,
-#slide8:checked ~ .slider__list .caption,
-#slide9:checked ~ .slider__list .caption,
-#slide10:checked ~ .slider__list .caption,
-#slide11:checked ~ .slider__list .caption,
-#slide12:checked ~ .slider__list .caption,
-#slide13:checked ~ .slider__list .caption,
-#slide14:checked ~ .slider__list .caption {
+#slide1:checked ~ ul .caption__item--1 .caption__text,
+#slide2:checked ~ ul .caption__item--2 .caption__text,
+#slide3:checked ~ ul .caption__item--3 .caption__text,
+#slide4:checked ~ ul .caption__item--4 .caption__text,
+#slide5:checked ~ ul .caption__item--5 .caption__text,
+#slide6:checked ~ ul .caption__item--6 .caption__text,
+#slide7:checked ~ ul .caption__item--7 .caption__text,
+#slide8:checked ~ ul .caption__item--8 .caption__text,
+#slide9:checked ~ ul .caption__item--9 .caption__text,
+#slide10:checked ~ ul .caption__item--10 .caption__text,
+#slide11:checked ~ ul .caption__item--11 .caption__text,
+#slide12:checked ~ ul .caption__item--12 .caption__text,
+#slide13:checked ~ ul .caption__item--13 .caption__text,
+#slide14:checked ~ ul .caption__item--14 .caption__text {
   opacity: 1;
 }
 
@@ -158,7 +187,7 @@
 
 .pagination {
   grid-column: 2 / 3;
-  grid-row: 1 / -1;
+  grid-row: 2 / 3;
   display: flex;
   flex-wrap: wrap;
   justify-content: end;
@@ -176,7 +205,7 @@
   padding: 0 0.313rem;
   background-color: hsl(144, 8%, 49%);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .pagination__btn {
