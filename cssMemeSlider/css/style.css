@@ -1,17 +1,18 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  height: 100vh;
   padding: 1.25rem 2.5rem;
   overflow-x: hidden;
+}
 
-  header,
-  footer {
-    flex-shrink: 0;
-  }
+.wrapper header,
+.wrapper footer {
+  flex-shrink: 0;
+}
 
-  main {
-    flex-grow: 1;
-  }
+.wrapper main {
+  flex-grow: 1;
 }
 
 .visually-hidden {
@@ -25,7 +26,7 @@
 }
 
 .slider {
-  margin: 0 auto;
+  width: 100%;
 }
 
 .slider__title {
@@ -35,9 +36,9 @@
 .slider__content {
   display: grid;
   grid-template-columns: 28.125rem 1fr;
-  width: 80vw;
+  width: 100%;
   max-width: 50rem;
-  margin: 0 0.625rem;
+  margin: 0 auto;
   overflow: hidden;
   border-radius: 1.5%;
   box-shadow: 0 0 0.625rem hsla(0, 0%, 0%, 0.1);
@@ -219,14 +220,16 @@
   transition: all 0.5s ease;
 }
 
-.pagination__btn:hover {
-  background-color: hsl(3, 89%, 96%);
-  border-color: hsl(3, 89%, 96%);
-}
-
-.pagination__btn:active {
-  background-color: hsl(3, 31%, 67%);
-  border-color: hsl(3, 31%, 67%);
+@media (hover:hover) {
+  .pagination__btn:hover {
+    background-color: hsl(3, 89%, 96%);
+    border-color: hsl(3, 89%, 96%);
+  }
+  
+  .pagination__btn:active {
+    background-color: hsl(3, 31%, 67%);
+    border-color: hsl(3, 31%, 67%);
+  }
 }
 
 /* Активная кнопка пагинации */
@@ -252,4 +255,54 @@
 .main-footer {
   margin: 0 auto;
   text-align: center;
+}
+
+/* Стили мобильного меню */
+
+@media (max-width: 1023px) {
+  .wrapper {
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+  }
+
+  .slider__content {
+    grid-template-columns: 1fr;
+  }
+
+  .slider__item {
+    display: flex;
+  }
+
+  .slider__image {
+    height: auto;
+    padding: 0.5rem;
+  }
+
+  .slider__image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .caption {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    min-width: 100%;
+  }
+
+  .caption__text {
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  .pagination {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .pagination label {
+    width: 2.65rem;
+    height: 2.65rem;
+  }
 }
