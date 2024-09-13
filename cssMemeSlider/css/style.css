@@ -60,7 +60,7 @@
 
 .slider__image {
   display: flex;
-  height: 31.25rem;
+  height: 29.25rem;
   padding: 1.25rem;
   background-color: hsl(135, 9%, 55%);
 
@@ -254,6 +254,7 @@
 /* Footer */
 .main-footer {
   margin: 0 auto;
+  padding-top: 1.25rem;
   text-align: center;
 }
 
@@ -269,20 +270,6 @@
     grid-template-columns: 1fr;
   }
 
-  .slider__item {
-    display: flex;
-  }
-
-  .slider__image {
-    height: auto;
-    padding: 0.5rem;
-  }
-
-  .slider__image img {
-    width: 100%;
-    height: auto;
-  }
-
   .caption {
     grid-column: 1 / -1;
     grid-row: 3 / 4;
@@ -290,8 +277,7 @@
   }
 
   .caption__text {
-    margin: 0;
-    margin-top: 20px;
+    margin: 1.25rem 0;
   }
 
   .pagination {
@@ -304,5 +290,21 @@
   .pagination label {
     width: 2.65rem;
     height: 2.65rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider__item {
+    display: flex;
+    height: auto;
+  }
+
+  .slider__image {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .slider__image img {
+    width: 100%;
   }
 }
